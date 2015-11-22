@@ -4,7 +4,7 @@ public class LinearFilterToImage
 {
     public static void Main()
     {
-        var bitmap = (Bitmap)System.Drawing.Image.FromFile("images.bmp");
+        var bitmap = (Bitmap)Image.FromFile("images.bmp");
         string path = "BluredImage.bmp";
 
         Blur(bitmap, path);
