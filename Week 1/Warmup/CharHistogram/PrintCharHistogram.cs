@@ -24,20 +24,7 @@ public class PrintCharHistogram
                 histogram.Add(element, 1);
             }
         }
-        Console.Write("{ ");
-        int count = 0;
-        foreach (var item in histogram)
-        {
-            if (count == histogram.Count() - 1)
-            {
-                Console.Write("'" + item.Key + "'" + ": " + item.Value + " }");
-            }
-            else
-            {
-                Console.Write("'" + item.Key + "'" + ": " + item.Value + ", ");
-            }
-            count++;
-        }
+        Console.WriteLine("{ " + string.Join(", ", histogram.Select(x => "'" + x.Key + "'" + ": " + x.Value).ToArray()) + " }");
     }
 }
 

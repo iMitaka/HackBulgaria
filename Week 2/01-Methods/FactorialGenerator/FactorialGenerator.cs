@@ -10,11 +10,7 @@ public class FactorialGenerator
         //Result:
         var result = GenerateFactorials(number);
 
-        foreach (var factorial in result)
-        {
-            Console.Write(factorial + " ");
-        }
-        Console.WriteLine();
+        Console.WriteLine(string.Join(", ",result));
     }
 
     public static IEnumerable<int> GenerateFactorials(int n)

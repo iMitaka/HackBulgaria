@@ -13,22 +13,10 @@ public class FindBirthdayRanges
         ranges.Add(new KeyValuePair<int, int>(200, 225));
         ranges.Add(new KeyValuePair<int, int>(300, 365));
 
+        //Result:
         var result = BirthdayRanges(birthdays, ranges);
-        Console.Write("{");
-        int count = 0;
-        foreach (var day in result)
-        {
-            if (count == result.Count() - 1)
-            {
-                Console.Write(day + "}");
-            }
-            else
-            {
-                Console.Write(day + ", ");
-            }
-            count++;
-        }
-        Console.WriteLine();
+
+        Console.WriteLine("{" + string.Join(", ", result) + "}");
     }
 
     public static List<int> BirthdayRanges(List<int> birthdays, List<KeyValuePair<int, int>> ranges)
