@@ -10,11 +10,7 @@ public class PrintReversedList
         //Result:
         ReverseList(list);
 
-        foreach (var digit in list)
-        {
-            Console.Write(digit + ", ");
-        }
-        Console.WriteLine();
+        Console.WriteLine(string.Join(", ",list));
     }
 
     public static void ReverseList(List<int> list)
