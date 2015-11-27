@@ -9,12 +9,14 @@ public class AppointmentsIntersection
             {
                 new DateTime(2015,11,27,10,00,00),
                 new DateTime(2015,11,27,11,00,00),
-                new DateTime(2015,11,27,13,00,00)
+                new DateTime(2015,11,27,13,00,00),
+                new DateTime(2016,11,27,13,00,00)
             };
 
         TimeSpan[] durations = 
             {
                 new TimeSpan(5,00,00),
+                new TimeSpan(4,00,00),
                 new TimeSpan(4,00,00),
                 new TimeSpan(4,00,00)
             };
@@ -44,23 +46,26 @@ public class AppointmentsIntersection
                 {
                     var minutes = endDates[i] - startDates[i];
                     Console.WriteLine("The appointment starting at {0:dd/mm/yyyy hh:mm} intersects the appointment starting at {1:dd/mm/yyyy hh:mm} with exactly {2} minutes.", startDates[i], startDates[j], minutes.TotalMinutes);
+                    Console.WriteLine();
                 }
-                else if (startDates[i] >= startDates[j] && endDates[i] > endDates[j])
+                else if ((startDates[i] >= startDates[j] && startDates[i] < endDates[j]) && endDates[i] > endDates[j])
                 {
                     var minutes = endDates[j] - startDates[i];
                     Console.WriteLine("The appointment starting at {0:dd/mm/yyyy hh:mm} intersects the appointment starting at {1:dd/mm/yyyy hh:mm} with exactly {2} minutes.", startDates[i], startDates[j], minutes.TotalMinutes);
+                    Console.WriteLine();
                 }
-                else if (startDates[i] < startDates[j] && endDates[i] <= endDates[j])
+                else if (startDates[i] < startDates[j] && (endDates[i] <= endDates[j] && endDates[i] > startDates[j]))
                 {
                     var minutes = endDates[i] - startDates[j];
                     Console.WriteLine("The appointment starting at {0:dd/mm/yyyy hh:mm} intersects the appointment starting at {1:dd/mm/yyyy hh:mm} with exactly {2} minutes.", startDates[i], startDates[j], minutes.TotalMinutes);
+                    Console.WriteLine();
                 }
                 else if (startDates[i] < startDates[j] && endDates[i] > endDates[j])
                 {
                     var minutes = endDates[j] - startDates[j];
                     Console.WriteLine("The appointment starting at {0:dd/mm/yyyy hh:mm} intersects the appointment starting at {1:dd/mm/yyyy hh:mm} with exactly {2:mmmm} minutes.", startDates[i], startDates[j], minutes.Minutes);
-                }
-                Console.WriteLine();
+                    Console.WriteLine();
+                }               
             }
         }
     }
