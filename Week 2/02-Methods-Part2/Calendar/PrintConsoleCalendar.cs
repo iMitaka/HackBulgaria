@@ -16,9 +16,12 @@ public class PrintConsoleCalendar
         int nullDaysCount = 0;
         int currentDay = 1;
         int firstDayInMounth = 1;
-        string firstDay = new DateTime(year, month, 1).DayOfWeek.ToString();
+        var date = new DateTime(year, month, 1);
+        string firstDay = date.DayOfWeek.ToString();
         string[] daysOfWeekNames = culture.DateTimeFormat.DayNames;
-
+        string[] monthsInYear = culture.DateTimeFormat.MonthNames;
+        Console.WriteLine(monthsInYear[month - 1]);
+        Console.WriteLine();
         if (culture.DateTimeFormat.FirstDayOfWeek.ToString() == "Monday")
         {
             for (int i = 1; i < daysOfWeekNames.Length; i++)
@@ -44,6 +47,7 @@ public class PrintConsoleCalendar
             {
                 Console.Write("{0,10} ", daysOfWeekNames[i]);
             }
+            Console.WriteLine();
             Console.WriteLine();
 
             switch (firstDay)
