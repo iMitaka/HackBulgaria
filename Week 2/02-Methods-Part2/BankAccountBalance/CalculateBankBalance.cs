@@ -38,6 +38,6 @@ public class CalculateBankBalance
         }
 
         double balance = recived - spended;
-        Console.WriteLine("{0:C2}",balance);
+        Console.WriteLine("Balance for period {0} - {1}: {2:C2}",fromDate.ToShortDateString(),toDate.ToShortDateString(),balance);
     }
 }
