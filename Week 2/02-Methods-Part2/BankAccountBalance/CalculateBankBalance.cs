@@ -3,21 +3,22 @@ using System.Linq;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Threading;
 
 public class CalculateBankBalance
 {
     public static void Main()
     {
-        System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
+        CultureInfo customCulture = (CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
         customCulture.NumberFormat.NumberDecimalSeparator = ".";
 
-        System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
+        Thread.CurrentThread.CurrentCulture = customCulture;
 
-        CultureInfo bgCulture = new CultureInfo("bg-BG");
         string[] input = File.ReadAllText(@"..\..\PeshoFile.txt", Encoding.Default).Split(new char[] { ';', ' ' });
 
         var fromDate = new DateTime(2015, 3, 28);
         var toDate = new DateTime(2015, 3, 31);
+        CultureInfo bgCulture = new CultureInfo("bg-BG");
 
         double recived = 0;
         double spended = 0;
@@ -38,6 +39,6 @@ public class CalculateBankBalance
         }
 
         double balance = recived - spended;
-        Console.WriteLine("Balance for period {0} - {1}: {2:C2}",fromDate.ToShortDateString(),toDate.ToShortDateString(),balance);
+        Console.WriteLine("Balance for period {0} - {1}: {2:C2}", fromDate.ToShortDateString(), toDate.ToShortDateString(), balance);
     }
 }
