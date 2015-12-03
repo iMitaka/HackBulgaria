@@ -29,7 +29,7 @@ namespace GeometryFigures
 
             if (first.GetY > second.GetY)
             {
-		//Reverse points for to avoid exceptions
+		//Reverse points to avoid exceptions
 
                 Point tempPoint = first;
                 first = second;
@@ -59,7 +59,7 @@ namespace GeometryFigures
 
             if (first.GetY > second.GetY)
             {
-		//Reverse points for to avoid exceptions
+		//Reverse points to avoid exceptions
 
                 Point tempPoint = first;
                 first = second;
