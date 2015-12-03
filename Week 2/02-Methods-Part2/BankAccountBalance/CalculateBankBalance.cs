@@ -18,6 +18,7 @@ public class CalculateBankBalance
 
         var fromDate = new DateTime(2015, 3, 28);
         var toDate = new DateTime(2015, 3, 31);
+        
         CultureInfo bgCulture = new CultureInfo("bg-BG");
 
         double recived = 0;
