@@ -24,18 +24,20 @@ namespace GeometryFigures
         {
             if (first.GetX == second.GetX || first.GetY == second.GetY) 
             {
-                throw new ArgumentException("Points can't be on same axis!");
+                throw new ArgumentException("Points cannot be on same axis!");
             } 
 
             if (first.GetY > second.GetY)
             {
+		//Reverse points for to avoid exceptions
+
                 Point tempPoint = first;
                 first = second;
                 second = tempPoint;
             }
 
-            width = second.GetX - first.GetX;
-            height = second.GetY - first.GetY;
+            this.width = second.GetX - first.GetX;
+            this.height = second.GetY - first.GetY;
 
             this.lowerLeftPoint = first;
             this.upperLeftPoint = new Point(first.GetX, second.GetY - this.width);
@@ -57,6 +59,8 @@ namespace GeometryFigures
 
             if (first.GetY > second.GetY)
             {
+		//Reverse points for to avoid exceptions
+
                 Point tempPoint = first;
                 first = second;
                 second = tempPoint;
