@@ -27,15 +27,15 @@ namespace GeometryFigures
 
             Console.WriteLine("Equals: " + rect.Equals(anotherRect));
             Console.WriteLine();
-            Console.WriteLine("Width: {0}", rect.Width);
-            Console.WriteLine("Height: {0}", rect.Height);
-            Console.WriteLine("Lower Left: {0}", rect.LowerLeftPoint);
-            Console.WriteLine("Lower Rigth: {0}", rect.LowerRightPoint);
-            Console.WriteLine("Upper Left: {0}", rect.UpperLeftPoint);
-            Console.WriteLine("Upper Rigth: {0}", rect.UpperRightPoint);
+            Console.WriteLine("Width: {0}", rect.GetWidth);
+            Console.WriteLine("Height: {0}", rect.GetHeight);
+            Console.WriteLine("Lower Left: {0}", rect.GetLowerLeftPoint);
+            Console.WriteLine("Lower Rigth: {0}", rect.GetLowerRightPoint);
+            Console.WriteLine("Upper Left: {0}", rect.GetUpperLeftPoint);
+            Console.WriteLine("Upper Rigth: {0}", rect.GetUpperRightPoint);
             Console.WriteLine("Perimeter: {0}", rect.GetPerimeter());
             Console.WriteLine("Area: {0}", rect.GetArea());
-            Console.WriteLine("Center: {0}", rect.Center);
+            Console.WriteLine("Center: {0}", rect.GetCenterPoint);
             Console.WriteLine();
 
             Vector vector = new Vector(new double[] { 1, 2, 3, 4 });

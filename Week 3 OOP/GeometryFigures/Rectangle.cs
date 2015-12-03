@@ -82,7 +82,7 @@ namespace GeometryFigures
             this.center = new Point(first.GetX + this.width / 2, first.GetY + this.height / 2);
         }
 
-        public Point LowerLeftPoint 
+        public Point GetLowerLeftPoint 
         {
             get 
             {
@@ -90,7 +90,7 @@ namespace GeometryFigures
             }
         }
 
-        public Point LowerRightPoint 
+        public Point GetLowerRightPoint 
         {
             get 
             {
@@ -98,7 +98,7 @@ namespace GeometryFigures
             } 
         }
 
-        public Point UpperLeftPoint 
+        public Point GetUpperLeftPoint 
         {
             get 
             {
@@ -106,7 +106,7 @@ namespace GeometryFigures
             }
         }
 
-        public Point UpperRightPoint 
+        public Point GetUpperRightPoint 
         {
             get
             {
@@ -114,7 +114,7 @@ namespace GeometryFigures
             }
         }
 
-        public LineSegment LowerSide 
+        public LineSegment GetLowerSide 
         {
             get 
             {
@@ -122,7 +122,7 @@ namespace GeometryFigures
             }
         }
 
-        public LineSegment UpperSide 
+        public LineSegment GetUpperSide 
         { 
             get
             {
@@ -130,7 +130,7 @@ namespace GeometryFigures
             }
         }
 
-        public LineSegment LeftSide 
+        public LineSegment GetLeftSide 
         {
             get
             {
@@ -138,7 +138,7 @@ namespace GeometryFigures
             }
         }
 
-        public LineSegment RightSide 
+        public LineSegment GetRightSide 
         {
             get
             { 
@@ -146,7 +146,7 @@ namespace GeometryFigures
             } 
         }
 
-        public double Width 
+        public double GetWidth 
         {
             get
             {
@@ -154,7 +154,7 @@ namespace GeometryFigures
             }
         }
 
-        public double Height 
+        public double GetHeight 
         {
             get 
             {
@@ -162,7 +162,7 @@ namespace GeometryFigures
             }
         }
 
-        public Point Center 
+        public Point GetCenterPoint 
         {
             get
             {
