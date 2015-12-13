@@ -13,7 +13,6 @@ namespace VATTAXCalculator
 
         public Order(Dictionary<int, int> order)
         {
-            // Separates order to product ids and product quantities
             this.ProductIds = order.Keys.ToList();
             this.ProductQuantities = order.Values.ToList();
         }
