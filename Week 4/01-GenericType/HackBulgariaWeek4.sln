@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericProblems", "GenericProblems\GenericProblems.csproj", "{C59F2F4D-CD5C-40DA-A422-655752355000}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotoGame", "LotoGame\LotoGame.csproj", "{9E553A6B-EDC3-46B5-8C89-423D8E2CD2DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C59F2F4D-CD5C-40DA-A422-655752355000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C59F2F4D-CD5C-40DA-A422-655752355000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C59F2F4D-CD5C-40DA-A422-655752355000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C59F2F4D-CD5C-40DA-A422-655752355000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E553A6B-EDC3-46B5-8C89-423D8E2CD2DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E553A6B-EDC3-46B5-8C89-423D8E2CD2DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E553A6B-EDC3-46B5-8C89-423D8E2CD2DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E553A6B-EDC3-46B5-8C89-423D8E2CD2DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
