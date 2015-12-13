@@ -10,6 +10,7 @@ namespace LotoGame
     {
         public static void Main()
         {
+            
             Combination<int, string> winning = new Combination<int, string>(1, 2, 3, "ivan", "pesho", "gosho");
             LottoGame<int,string> game = new LottoGame<int,string>(winning);
 
