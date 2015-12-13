@@ -64,8 +64,13 @@ namespace VATTAXCalculator
 
             if (sum == 0)
             {
+<<<<<<< HEAD
                 Console.WriteLine("In inventory dosn't have the requested quantities for products!");
                 return -1;
+=======
+                Console.WriteLine("In ShopInventory not have requested quantities !");
+                return null;
+>>>>>>> origin/master
             }
 
             return sum;
