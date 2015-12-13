@@ -6,38 +6,53 @@ using System.Threading.Tasks;
 
 namespace PairProblem
 {
-    public class Pair
+    public class Pair<T1, T2>
     {
-        public Pair(object[] pairs) 
+        private T1 firstMember;
+        private T2 secondMember;
+
+        public Pair(T1 firstMember, T2 secondMember)
         {
-            this.FirstPair = pairs[0];
-            this.SecondPair = pairs[1];
+            this.firstMember = firstMember;
+            this.secondMember = secondMember;
         }
 
-        public object FirstPair { get; private set; }
+        public T1 FirstPair
+        {
+            get
+            {
+                return this.firstMember;
+            }
+        }
 
-        public object SecondPair { get; private set; }
+        public T2 SecondPair
+        {
+            get
+            {
+                return this.secondMember;
+            }
+        }
 
         public override string ToString()
         {
-            return base.ToString() + "(object[])";
+            return string.Format("First Member: {0}, Second Member: {1}", this.firstMember, this.secondMember);
         }
 
         public override bool Equals(object obj)
         {
-            if (!(obj is Pair))
+            if (!(obj is Pair<T1,T2>))
             {
                 throw new FormatException("The other object must be a Pair object");
             }
-            var otherPair = obj as Pair;
-            return this.FirstPair == otherPair.FirstPair && this.SecondPair == otherPair.SecondPair;
+            var otherPair = obj as Pair<T1, T2>;
+            return this.FirstPair.Equals(otherPair.FirstPair) && this.SecondPair.Equals(otherPair.SecondPair);
         }
 
-        public static bool operator ==(Pair a, Pair b) 
+        public static bool operator ==(Pair<T1, T2> a, Pair<T1, T2> b)
         {
             return a.Equals(b);
         }
-        public static bool operator !=(Pair a, Pair b)
+        public static bool operator !=(Pair<T1, T2> a, Pair<T1, T2> b)
         {
             return !a.Equals(b);
         }

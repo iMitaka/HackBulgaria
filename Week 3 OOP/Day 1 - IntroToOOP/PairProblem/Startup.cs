@@ -13,8 +13,8 @@ namespace PairProblem
             object[] pairs = { 1, 2, 3, 4, 5 };
             object[] anotherPairs = { "aa", "bb" };
 
-            var pair = new Pair(pairs);
-            var anotherPair = new Pair(pairs);
+            Pair<int, int> pair = new Pair<int, int>(1,2);
+            Pair<int, int> anotherPair = new Pair<int, int>(1, 2);
             Console.WriteLine(pair.ToString());
             Console.WriteLine(pair.Equals(anotherPair));
         }
