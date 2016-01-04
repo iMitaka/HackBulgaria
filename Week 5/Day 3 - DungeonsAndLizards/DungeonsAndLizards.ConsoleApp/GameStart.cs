@@ -10,17 +10,15 @@ namespace DungeonsAndLizards.ConsoleApp
     public class GameStart
     {
         public static void Main()
-        {
-            List<ITreasure> treasures = new List<ITreasure>();
-            treasures.Add(new Weapon("The Sword Of Heroes", 50));
-            treasures.Add(new Spell("Frost Ball", 60, 20, 2));
+       {
+            var map = new Dungeon(@"D:\level1.txt");
+            map.Treasures.Add(new Weapon("The Sword Of Heroes", 50));
+            map.Treasures.Add(new Spell("Frost Ball", 60, 20, 2));
             for (int i = 0; i < 5; i++)
             {
-                treasures.Add(new Potion(PotionType.health, "Health Potion", 50));
-                treasures.Add(new Potion(PotionType.mana, "Mana Potion", 50));
+                map.Treasures.Add(new Potion(PotionType.health, "Health Potion", 50));
+                map.Treasures.Add(new Potion(PotionType.mana, "Mana Potion", 50));
             }
-
-            var map = new Dungeon(@"D:\level1.txt", treasures);
             map.PrintMap();
             var hero = new Hero("Bron", "Dragonslayer", 100, 100, 2);
             var w = new Weapon("The Axe of Destiny", 20);

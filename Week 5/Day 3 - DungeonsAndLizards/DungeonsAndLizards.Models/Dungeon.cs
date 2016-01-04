@@ -15,9 +15,9 @@ namespace DungeonsAndLizards.Models
         private Hero hero;
         private List<ITreasure> dungenTreasures;
 
-        public Dungeon(string path, List<ITreasure> dungenTreasures)
+        public Dungeon(string mapFilePath)
         {
-            string[] dungen = File.ReadAllText(path).Split('\n');
+            string[] dungen = File.ReadAllText(mapFilePath).Split('\n');
             int width = dungen[0].Length - 1;
             int height = dungen.Length;
             this.map = new char[height, width];
@@ -29,7 +29,19 @@ namespace DungeonsAndLizards.Models
                     this.map[i, j] = rowElemets[j];
                 }
             }
-            this.dungenTreasures = dungenTreasures;
+            this.dungenTreasures = new List<ITreasure>();
+        }
+
+        public List<ITreasure> Treasures 
+        {
+            get 
+            {
+                return this.dungenTreasures;
+            }
+            set 
+            {
+                this.dungenTreasures = value;
+            }
         }
 
         public void PrintMap()
@@ -243,9 +255,16 @@ namespace DungeonsAndLizards.Models
 
         private void PickTreasure()
         {
+            if (this.dungenTreasures.Count < 1)
+            {
+                Console.WriteLine("No treasures found!");
+                Console.WriteLine();
+                return;
+            }
             Random rnd = new Random();
             int number = rnd.Next(0, dungenTreasures.Count);
             var treasure = dungenTreasures[number];
+
             if (treasure is Potion)
             {
                 var potion = treasure as Potion;
