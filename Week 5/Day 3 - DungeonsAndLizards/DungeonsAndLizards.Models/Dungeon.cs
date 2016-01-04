@@ -345,7 +345,7 @@ namespace DungeonsAndLizards.Models
                 if (by.ToLower() == "spell" && this.hero.CanCast() && this.hero.Spell != null)
                 {
                     Enemy enemy = new Enemy(100, 100, 20);
-
+                    
                     //If want enemy to cast spells uncommend next 2 lines:
 
                     //var enemySpell = new Spell("Fire Storm", 20, 30, 2);
