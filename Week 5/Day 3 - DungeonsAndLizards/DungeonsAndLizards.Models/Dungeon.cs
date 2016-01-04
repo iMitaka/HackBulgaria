@@ -99,9 +99,9 @@ namespace DungeonsAndLizards.Models
 
         public bool Spawn(Hero hero)
         {
-            for (int row = 0; row < this.map.GetLength(0); row++)
+            for (int col = 0; col < this.map.GetLength(1); col++)
             {
-                for (int col = 0; col < this.map.GetLength(1); col++)
+                for (int row = 0; row < this.map.GetLength(0); row++)
                 {
                     if (this.map[row, col] == 'S')
                     {
