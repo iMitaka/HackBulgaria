@@ -122,7 +122,7 @@ namespace DungeonsAndLizards.Models
             {
                 Enemy enemy = new Enemy(100, 100, 20);
 
-                //If wont enemy to cast spells uncommend this:
+                //If want enemy to cast spells uncommend next 2 lines:
 
                 //var enemySpell = new Spell("Fire Storm", 20, 30, 2);
                 //enemy.Spell = enemySpell;
@@ -346,7 +346,7 @@ namespace DungeonsAndLizards.Models
                 {
                     Enemy enemy = new Enemy(100, 100, 20);
                     
-                    //If wont enemy to cast spells uncommend this:
+                    //If want enemy to cast spells uncommend next 2 lines:
 
                     //var enemySpell = new Spell("Fire Storm", 20, 30, 2);
                     //enemy.Spell = enemySpell;
