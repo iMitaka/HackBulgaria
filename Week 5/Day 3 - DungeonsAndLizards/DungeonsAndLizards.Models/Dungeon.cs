@@ -32,15 +32,11 @@ namespace DungeonsAndLizards.Models
             this.dungenTreasures = new List<ITreasure>();
         }
 
-        public List<ITreasure> Treasures 
+        public List<ITreasure> Treasures
         {
-            get 
+            get
             {
                 return this.dungenTreasures;
-            }
-            set 
-            {
-                this.dungenTreasures = value;
             }
         }
 
@@ -125,6 +121,11 @@ namespace DungeonsAndLizards.Models
             if (this.hero.IsAlive())
             {
                 Enemy enemy = new Enemy(100, 100, 20);
+
+                //If wont enemy to cast spells uncommend this:
+
+                //var enemySpell = new Spell("Fire Storm", 20, 30, 2);
+                //enemy.Spell = enemySpell;
 
                 this.hero.TakeMana(this.hero.ManaRegen);
                 switch (direction)
@@ -344,8 +345,11 @@ namespace DungeonsAndLizards.Models
                 if (by.ToLower() == "spell" && this.hero.CanCast() && this.hero.Spell != null)
                 {
                     Enemy enemy = new Enemy(100, 100, 20);
-                   // var enemySpell = new Spell("Fire Storm", 20, 30, 2);
-                   // enemy.Spell = enemySpell;
+                    
+                    //If wont enemy to cast spells uncommend this:
+
+                    //var enemySpell = new Spell("Fire Storm", 20, 30, 2);
+                    //enemy.Spell = enemySpell;
 
                     for (int i = 1; i <= this.hero.Spell.CastRange; i++)
                     {

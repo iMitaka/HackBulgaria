@@ -10,8 +10,9 @@ namespace DungeonsAndLizards.ConsoleApp
     public class GameStart
     {
         public static void Main()
-       {
-            var map = new Dungeon(@"D:\level1.txt");
+        {
+            string mapsFolderPath = @"..\..\maps\";
+            var map = new Dungeon(mapsFolderPath + "level1.txt");
             map.Treasures.Add(new Weapon("The Sword Of Heroes", 50));
             map.Treasures.Add(new Spell("Frost Ball", 60, 20, 2));
             for (int i = 0; i < 5; i++)
