@@ -29,7 +29,7 @@ namespace ExtensionsSolution
                 }
                 i = swap;
             }
-            
+
             var newList = new List<T>();
             for (int index = 0; index < list.Count; index++)
             {
@@ -65,7 +65,35 @@ namespace ExtensionsSolution
             return newList;
         }
 
-        public static IList<T> SelectionSort<T>(this IList<T> list) 
+        public static IList<T> BubbleSort<T>(this IList<T> list, ExtensionsSolution.PredicateDelegate<T> predicate )
+        {
+            int i = list.Count - 1;
+            while (i > 0)
+            {
+                int swap = 0;
+                for (int j = 0; j < i; j++)
+                {
+
+                    if (predicate(list[j], list[j + 1]))
+                    {
+                        var temp = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = temp;
+                        swap = j;
+                    }
+                }
+                i = swap;
+            }
+
+            var newList = new List<T>();
+            for (int index = 0; index < list.Count; index++)
+            {
+                newList.Add(list[index]);
+            }
+            return newList;
+        }
+
+        public static IList<T> SelectionSort<T>(this IList<T> list)
         {
             int min;
             T temp;
@@ -118,7 +146,7 @@ namespace ExtensionsSolution
             return newList;
         }
 
-        public static IEnumerable<T> Quicksort<T>(this IEnumerable<T> list) 
+        public static IEnumerable<T> Quicksort<T>(this IEnumerable<T> list)
         {
             var comparer = Comparer<T>.Default;
             if (list.Count() < 2)
@@ -154,5 +182,6 @@ namespace ExtensionsSolution
                 .Concat(new T[] { pivot })
                 .Concat(Quicksort(greaters, comparer));
         }
+
     }
 }

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace ExtensionsSolution
 {
+    public delegate bool PredicateDelegate<T>(T first, T second);
+
     public class TestAlgorithmsProgramMain
     {
         public static void Main()
-        {
+        {          
             Console.WriteLine("*LastDigitComparer + BubbleSort: ");
             Console.WriteLine();
 
@@ -17,6 +19,18 @@ namespace ExtensionsSolution
             var sortedArray = array.BubbleSort(new LastDigitComparer());
 
             foreach (var item in sortedArray)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("BubbleSort with Delegate - Predicate for Compare Integers : ");
+            Console.WriteLine();
+
+            var secondArrey = new List<int>() { 213, 412, 141, 445, 550 };
+            PredicateDelegate<int> myDelegate = CompareIntegers;
+            var sortedArreyPredicate = secondArrey.BubbleSort(myDelegate);
+            foreach (var item in sortedArreyPredicate)
             {
                 Console.WriteLine(item);
             }
@@ -59,6 +73,15 @@ namespace ExtensionsSolution
                 }
             }
             Console.WriteLine();
+        }
+
+        public static bool CompareIntegers(int x, int y)
+        {
+            if (x > y)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
