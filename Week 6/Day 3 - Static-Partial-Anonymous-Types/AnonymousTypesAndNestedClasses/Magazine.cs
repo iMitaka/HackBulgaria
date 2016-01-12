@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnonymousTypesAndNestedClasses
 {
-    public class Magazine : ISortable
+    public class Magazine
     {
         public string Title { get; set; }
 

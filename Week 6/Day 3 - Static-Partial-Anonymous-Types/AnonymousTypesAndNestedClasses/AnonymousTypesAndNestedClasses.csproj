@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Book.cs" />
-    <Compile Include="ISortable.cs" />
     <Compile Include="Magazine.cs" />
     <Compile Include="MagazineAndBookSorter.cs" />
     <Compile Include="ProblemsTestApp.cs" />
