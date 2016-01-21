@@ -9,6 +9,7 @@ namespace PandaNetwork
     public interface IPandaSocialNetworkStorageProvider
     {
         void Save(PandaSocialNetwork network, string fileName);
+
         PandaSocialNetwork Load(string fileName);
     }
 }

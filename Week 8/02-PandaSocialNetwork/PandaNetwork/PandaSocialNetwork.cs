@@ -147,17 +147,20 @@ namespace PandaNetwork
 
         public int HowManyGenderInNetwork(int level, Panda panda, GenderType gender)
         {
-            List<Panda> friends = this.FriendsOf(panda);
-  
+            List<Panda> friends = this.FriendsOf(panda); 
             int countLevel = 0;
             int genderCount = 0;
+
             while (true)
             {
                 countLevel++;
 
+                int friendsCount = friends.Count;
+
                 for (int i = 0; i < friends.Count; i++)
                 {
                     var friendList = this.FriendsOf(friends[i]);
+
                     for (int j = 0; j < friendList.Count; j++)
                     {
                         if (!friends.Contains(friendList[j]) && !friendList[j].Equals(panda))
@@ -167,12 +170,19 @@ namespace PandaNetwork
                         }
                     }
                 }
+
                 if (countLevel == level)
                 {
                     genderCount = friends.Where(x => x.Gender == gender).Count();
                     break;
                 }
+                else if (friendsCount == friends.Count) 
+                {
+                    genderCount = friends.Where(x => x.Gender == gender).Count();
+                    break;
+                }
             }
+
             return genderCount;
         }
     }
