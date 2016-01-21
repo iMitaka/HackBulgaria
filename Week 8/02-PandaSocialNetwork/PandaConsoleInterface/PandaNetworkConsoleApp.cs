@@ -49,7 +49,7 @@ namespace PandaConsoleInterface
                 Console.WriteLine(friend.ToString());
             }
 
-            Console.WriteLine(network.HowManyGenderInNetwork(2, rado, GenderType.Female)); // 1
+            Console.WriteLine(network.HowManyGenderInNetwork(2, rado, GenderType.Female)); // 2
         }
     }
 }

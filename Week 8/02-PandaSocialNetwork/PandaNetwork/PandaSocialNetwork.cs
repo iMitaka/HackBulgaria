@@ -89,13 +89,16 @@ namespace PandaNetwork
                 {
                     List<Panda> friends = this.FriendsOf(firstPanda);
                     int level = 1;
+
                     while (true)
                     {
                         if (friends.Contains(secondPanda))
                         {
                             break;
                         }
+
                         int friendsCount = friends.Count;
+
                         for (int i = 0; i < friends.Count; i++)
                         {
                             var friendList = this.FriendsOf(friends[i]);
@@ -145,12 +148,6 @@ namespace PandaNetwork
         public int HowManyGenderInNetwork(int level, Panda panda, GenderType gender)
         {
             List<Panda> friends = this.FriendsOf(panda);
-
-            Dictionary<Panda, int> pandasAndLevels = new Dictionary<Panda, int>();
-            foreach (var fr in friends)
-            {
-                pandasAndLevels.Add(fr, 1);
-            }
   
             int countLevel = 0;
             int genderCount = 0;
@@ -166,14 +163,13 @@ namespace PandaNetwork
                         if (!friends.Contains(friendList[j]) && !friendList[j].Equals(panda))
                         {
                             friends.Add(friendList[j]);
-                            pandasAndLevels.Add(friendList[j], level);
                             i++;
                         }
                     }
                 }
                 if (countLevel == level)
                 {
-                    genderCount = pandasAndLevels.Where(x => x.Key.Gender == gender && x.Value == level).Count();
+                    genderCount = friends.Where(x => x.Gender == gender).Count();
                     break;
                 }
             }

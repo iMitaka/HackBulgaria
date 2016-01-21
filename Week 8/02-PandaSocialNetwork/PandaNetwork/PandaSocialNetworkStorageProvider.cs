@@ -11,7 +11,12 @@ namespace PandaNetwork
 {
     public class PandaSocialNetworkStorageProvider : IPandaSocialNetworkStorageProvider
     {
-        private IFormatter formatter = new BinaryFormatter();
+        private IFormatter formatter;
+
+        public PandaSocialNetworkStorageProvider()
+        {
+            this.formatter = new BinaryFormatter();
+        }
 
         public void Save(PandaSocialNetwork network, string fileName)
         {
