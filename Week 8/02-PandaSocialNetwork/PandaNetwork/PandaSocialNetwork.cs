@@ -9,7 +9,12 @@ namespace PandaNetwork
     [Serializable]
     public class PandaSocialNetwork
     {
-        private Dictionary<Panda, List<Panda>> pandasAndFriends = new Dictionary<Panda, List<Panda>>();
+        private Dictionary<Panda, List<Panda>> pandasAndFriends;
+
+        public PandaSocialNetwork() 
+        {
+            this.pandasAndFriends = new Dictionary<Panda, List<Panda>>();
+        }
 
         public void AddPanda(Panda panda)
         {
