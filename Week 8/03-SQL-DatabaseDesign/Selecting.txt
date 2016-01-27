@@ -1,5 +1,5 @@
-..................................................
-1.Select the big boss:
+...................................................
+1. Select the big boss:
 ...................................................
 
 SELECT * FROM HackCompany.dbo.Employee e
@@ -7,14 +7,14 @@ WHERE e.Department_Id IS Null
 AND e.Manager_Id IS Null
 
 .................................................
-2.Select all department managers:
+2. Select all department managers:
 .................................................
 
 SELECT * FROM HackCompany.dbo.Employee e
 WHERE e.Manager_Id LIKE 1
 
 ..................................................................
-3.Select all employees in the Sales department ordered by Name:
+3. Select all employees in the Sales department ordered by Name:
 ..................................................................
 
 SELECT * FROM HackCompany.dbo.Employee e
@@ -22,7 +22,7 @@ WHERE e.Department_Id LIKE 1
 ORDER BY e.Name
 
 .....................................................................
-Select all departments with employees that are born after 1990:
+4. Select all departments with employees that are born after 1990:
 .....................................................................
 
 SELECT d.Name FROM HackCompany.dbo.Department d
@@ -32,7 +32,7 @@ WHERE e.DateOfBirth >= Convert(datetime, '1990-01-01' )
 GROUP BY d.Name
 
 ......................................................................
-Select all departments with more than 3 employees:
+5. Select all departments with more than 3 employees:
 ......................................................................
 
 SELECT Department.Name
@@ -42,7 +42,7 @@ GROUP BY Department.Name
 HAVING COUNT(*) > 3;
 
 .....................................................................
-Select the department having the most employees:
+6. Select the department having the most employees:
 .....................................................................
 
 SELECT TOP 1 Department.Name , COUNT(*) as 'Employee Count'
@@ -51,7 +51,7 @@ SELECT TOP 1 Department.Name , COUNT(*) as 'Employee Count'
   GROUP BY Department.Name
 
 ..........................................................................
-Select the order having the maximum total number of products:
+7. Select the order having the maximum total number of products:
 ..........................................................................
 
 SELECT TOP 1  [Order].Id , COUNT(*) as 'Product Count'
@@ -60,7 +60,7 @@ SELECT TOP 1  [Order].Id , COUNT(*) as 'Product Count'
   GROUP BY [Order].Id
 
 .........................................................
-Select the average discount of all customers:
+8. Select the average discount of all customers:
 .........................................................
 
 SELECT AVG(c.Discount) as 'Average Discount %' 
