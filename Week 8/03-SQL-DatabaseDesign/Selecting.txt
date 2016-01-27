@@ -1,0 +1,69 @@
+1.Select the big boss:
+...................................................
+
+SELECT * FROM HackCompany.dbo.Employee e
+WHERE e.Department_Id IS Null 
+AND e.Manager_Id IS Null
+
+.................................................
+2.Select all department managers:
+.................................................
+
+SELECT * FROM HackCompany.dbo.Employee e
+WHERE e.Manager_Id LIKE 1
+
+..................................................................
+3.Select all employees in the Sales department ordered by Name:
+..................................................................
+
+SELECT * FROM HackCompany.dbo.Employee e
+WHERE e.Department_Id LIKE 1
+ORDER BY e.Name
+
+.....................................................................
+Select all departments with employees that are born after 1990:
+.....................................................................
+
+SELECT d.Name FROM HackCompany.dbo.Department d
+JOIN HackCompany.dbo.Employee e
+ON d.Id = e.Department_Id
+WHERE e.DateOfBirth >= Convert(datetime, '1990-01-01' )
+GROUP BY d.Name
+
+......................................................................
+Select all departments with more than 3 employees:
+......................................................................
+
+SELECT Department.Name
+FROM Employee INNER JOIN Department
+ON Department.Id = Employee.Department_Id
+GROUP BY Department.Name
+HAVING COUNT(*) > 3;
+
+.....................................................................
+Select the department having the most employees:
+.....................................................................
+
+SELECT TOP 1 Department.Name , COUNT(*) as 'Employee Count'
+  FROM Employee INNER JOIN Department
+  ON Department.Id = Employee.Department_Id
+  GROUP BY Department.Name
+
+..........................................................................
+Select the order having the maximum total number of products:
+..........................................................................
+
+SELECT TOP 1  [Order].Id , COUNT(*) as 'Product Count'
+  FROM [Order] INNER JOIN OrdersProducts
+  ON [Order].Id = OrdersProducts.Order_Id
+  GROUP BY [Order].Id
+
+.........................................................
+Select the average discount of all customers:
+.........................................................
+
+SELECT AVG(c.Discount) as 'Average Discount %' 
+FROM HackCompany.dbo.Customer c
+
+
+

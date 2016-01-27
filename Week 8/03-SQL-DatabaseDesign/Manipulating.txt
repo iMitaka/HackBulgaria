@@ -1,0 +1,22 @@
+.............................................................
+Update all employees adding 1 year to their birth date:
+............................................................
+
+UPDATE Employee SET DateOfBirth = DATEADD(yyyy,1,DateOfBirth)
+
+..............................................................
+Double the discount of the customer with most orders:
+..............................................................
+
+UPDATE Customer SET Discount = Discount * 2
+
+........................................................
+Delete all products with no orders:
+........................................................
+
+DELETE FROM HackCompany.dbo.Product
+ WHERE Id NOT IN 
+	(
+	SELECT o.Product_Id
+	FROM HackCompany.dbo.OrdersProducts o
+	)

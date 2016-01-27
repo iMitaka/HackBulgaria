@@ -152,6 +152,11 @@ namespace PandaNetwork
 
         public int HowManyGenderInNetwork(int level, Panda panda, GenderType gender)
         {
+            if (!this.HasPanda(panda))
+            {
+                throw new PandaException.PandaIsNotOnNetworkException();
+            }
+
             List<Panda> friends = this.FriendsOf(panda); 
             int countLevel = 0;
             int genderCount = 0;
