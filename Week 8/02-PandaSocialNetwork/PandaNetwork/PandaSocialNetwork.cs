@@ -16,6 +16,14 @@ namespace PandaNetwork
             this.pandasAndFriends = new Dictionary<Panda, List<Panda>>();
         }
 
+        public Dictionary<Panda, List<Panda>> AllPandasAndFriends 
+        {
+            get 
+            {
+                return this.pandasAndFriends;
+            }
+        }
+
         public void AddPanda(Panda panda)
         {
             if (this.HasPanda(panda))

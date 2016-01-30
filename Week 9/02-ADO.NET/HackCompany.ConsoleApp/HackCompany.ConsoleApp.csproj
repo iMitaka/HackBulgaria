@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C1D08FB4-197E-4AC6-B033-7C993DBB6B89}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{FEFB316C-6BF8-4C6B-981D-6F1275E605D8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PandaNetwork</RootNamespace>
-    <AssemblyName>PandaNetwork</AssemblyName>
+    <RootNamespace>HackCompany.ConsoleApp</RootNamespace>
+    <AssemblyName>HackCompany.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,16 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IPandaSocialNetworkStorageProvider.cs" />
-    <Compile Include="PandaException\PandaIsNotOnNetworkException.cs" />
-    <Compile Include="PandaException\PandasAlreadyFriendsException.cs" />
-    <Compile Include="PandaException\PandaAlreadyThereException.cs" />
-    <Compile Include="PandaModels\GenderType.cs" />
-    <Compile Include="PandaModels\Panda.cs" />
-    <Compile Include="PandaSocialNetwork.cs" />
-    <Compile Include="PandaSocialNetworkAdoNetStorageProvider.cs" />
-    <Compile Include="PandaSocialNetworkStorageProvider.cs" />
+    <Compile Include="CategoryUtility.cs" />
+    <Compile Include="CustomerUtility.cs" />
+    <Compile Include="DepartmentUtility.cs" />
+    <Compile Include="EmployeeUtility.cs" />
+    <Compile Include="HackCompanyUtility.cs" />
+    <Compile Include="OrderUtility.cs" />
+    <Compile Include="ProductUtility.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HackCompany.Data\HackCompany.Data.csproj">
+      <Project>{15cb1d08-5bec-4fe0-a425-ad158e40dcda}</Project>
+      <Name>HackCompany.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

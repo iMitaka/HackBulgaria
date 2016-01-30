@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PandaNetwork;
+using System.Configuration;
 
 namespace PandaConsoleInterface
 {
@@ -31,9 +32,17 @@ namespace PandaConsoleInterface
             //network.MakeFriends(rado, tony);          
 
             IPandaSocialNetworkStorageProvider provider = new PandaSocialNetworkStorageProvider();
+            IPandaSocialNetworkStorageProvider dataProvider = new PandaSocialNetworkAdoNetStorageProvider();
             // provider.Save(network, "MyNetwork");  // Make save of network
 
-            var network = provider.Load("MyNetwork"); // network is loaded from save file.
+            // var network = provider.Load("MyNetwork"); // network is loaded from save file.
+
+            string connectionString = ConfigurationManager.ConnectionStrings["PandaSocialNetowrk"].ConnectionString;
+
+            var network = dataProvider.Load(connectionString);
+
+            
+            // dataProvider.Save(network, connectionString); // Save network to DB
 
             // Check some methods:
 

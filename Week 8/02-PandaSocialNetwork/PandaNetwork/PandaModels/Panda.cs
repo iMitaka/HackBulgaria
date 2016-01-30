@@ -20,6 +20,8 @@ namespace PandaNetwork
             this.gender = gender;
         }
 
+        public int Id { get; set; }
+
         private void SetEmail(string email)
         {
             if (email.Contains('@') && email.Contains('.'))

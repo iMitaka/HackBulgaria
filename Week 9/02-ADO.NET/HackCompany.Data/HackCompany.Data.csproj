@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C1D08FB4-197E-4AC6-B033-7C993DBB6B89}</ProjectGuid>
+    <ProjectGuid>{15CB1D08-5BEC-4FE0-A425-AD158E40DCDA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PandaNetwork</RootNamespace>
-    <AssemblyName>PandaNetwork</AssemblyName>
+    <RootNamespace>HackCompany.Data</RootNamespace>
+    <AssemblyName>HackCompany.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,15 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IPandaSocialNetworkStorageProvider.cs" />
-    <Compile Include="PandaException\PandaIsNotOnNetworkException.cs" />
-    <Compile Include="PandaException\PandasAlreadyFriendsException.cs" />
-    <Compile Include="PandaException\PandaAlreadyThereException.cs" />
-    <Compile Include="PandaModels\GenderType.cs" />
-    <Compile Include="PandaModels\Panda.cs" />
-    <Compile Include="PandaSocialNetwork.cs" />
-    <Compile Include="PandaSocialNetworkAdoNetStorageProvider.cs" />
-    <Compile Include="PandaSocialNetworkStorageProvider.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
