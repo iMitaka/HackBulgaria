@@ -49,7 +49,7 @@
     <Compile Include="HackCompanyUtility.cs" />
     <Compile Include="OrderUtility.cs" />
     <Compile Include="ProductUtility.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ProgramMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
